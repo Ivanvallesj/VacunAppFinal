@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VacunAppFinal.Core" xmlns:ViewModels="clr-namespace:VacunAppFinal.ViewModels"
+             x:Class="VacunAppFinal.Views.RegistroDeHijos">
+    <ContentPage.BindingContext>
+        <ViewModels:RegistroDeHijosViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style x:Key="estiloEditar" TargetType="Button">
+            <Style.Triggers>
+                <DataTrigger TargetType="{x:Type Button}"
+        Binding="{Binding SelectedItem, Source={x:Reference listahijos}}" Value="{x:Null}">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="36"  Grid.Row="0" Grid.Column="0"/>
+        <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0"  Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand">
+            <Label Text="{x:Static local:Literales.LabelBienvenido}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title" />
+            <Label Text="{Binding NombreTutor}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  />
+        </StackLayout>
+        <ListView Grid.Column="0" Grid.Row="3" x:Name="listahijos" 
+                            ItemsSource="{Binding Hijos, Mode=OneWay}" 
+                            SelectionMode="Single"
+                            SelectedItem="{Binding HijoSeleccionado}"
+                   IsPullToRefreshEnabled="True"
+                  IsRefreshing="False"
+                    RefreshCommand="{Binding ObtenerHijosCommand}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Apellido}"
+                              Detail="{Binding  Nombre}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button 
+            Grid.Row="4" 
+            Grid.Column="0" 
+            Margin="10,5"
+            Text="{x:Static local:Literales.TituloBotonCargarHijo}"
+            BackgroundColor="{StaticResource ColorBotones}"
+            Command="{Binding CargarHijoCommand}"
+            />
+        <Button Style="{StaticResource Key=estiloEditar}"
+            Grid.Row="5" 
+            Grid.Column="0" 
+            Margin="10,5"
+            Text="{x:Static local:Literales.TituloBotonModificarHijo}"
+            BackgroundColor="{StaticResource ColorBotones}"
+            Command="{Binding ModificarHijoCommand}"
+            />
+        <Button Style="{StaticResource Key=estiloEditar}"
+            Grid.Row="6" 
+            Grid.Column="0" 
+            Margin="10,5"
+            Text="{x:Static local:Literales.TituloBotonQuitarHijo}"
+            BackgroundColor="{StaticResource ColorBotones}"
+            Command="{Binding EliminarHijoCommand}"
+            />
+        <Button Style="{StaticResource Key=estiloEditar}"
+            Grid.Row="7" 
+            Grid.Column="0" 
+            Margin="10,5"
+            Text="{x:Static local:Literales.TituloBotonCargarVacunacion}"
+            BackgroundColor="{StaticResource ColorBotones}"
+            Command="{Binding CargarCalendarioCommand}"
+            />
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VacunAppFinal.Core" 
+             x:Class="VacunAppFinal.Inicio">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  Grid.Row="0" Grid.Column="0"/>
+        <Image Source="logo.png" BackgroundColor="PowderBlue" Grid.Column="0" Grid.Row="1"  />
+
+        <Button 
+            Grid.Row="2" 
+            Grid.Column="0" 
+            Text="{x:Static local:Literales.TituloBotonRegistrarme}"
+            BackgroundColor="{StaticResource ColorBotones}"
+            Clicked="AbrirPantallaRegistrarme"/>
+        <Button 
+            Grid.Row="3" 
+            Grid.Column="0" 
+            Text="{x:Static local:Literales.TituloBotonIniciarSesion}"
+            BackgroundColor="{StaticResource ColorBotones}"
+            Clicked="AbrirPantallaIniciarSesion"/>
+
+    </Grid>
+
+</ContentPage>

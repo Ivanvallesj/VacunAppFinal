@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VacunAppFinal.Core" xmlns:ViewModels="clr-namespace:VacunAppFinal.ViewModels"
+             x:Class="VacunAppFinal.Views.InicioLogueado">
+    <ContentPage.BindingContext>
+        <ViewModels:InicioLogueadoViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="36"  Grid.Row="0" Grid.Column="0"/>
+        <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0"  Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand">
+            <Label Text="{x:Static local:Literales.LabelBienvenido}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title" />
+            <Label Text="{Binding NombreTutor}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  />
+        </StackLayout>
+        <Image Source="logo.png" BackgroundColor="PowderBlue" Grid.Column="0" Grid.Row="3"  />
+
+        <Button 
+            Grid.Row="4" 
+            Grid.Column="0" 
+            Margin="10,5"
+            Text="{x:Static local:Literales.TituloBotonRegistrarHijos}"
+            BackgroundColor="{StaticResource ColorBotones}"
+            Command="{Binding RegistroDeHijosCommand}"
+            />
+        <Button 
+            Grid.Row="5" 
+            Grid.Column="0" 
+            Margin="10,5"
+            Text="{x:Static local:Literales.TituloBotonRegistrarVacunación}"
+            BackgroundColor="{StaticResource ColorBotones}"
+            
+            />
+
+    </Grid>
+</ContentPage>
