@@ -34,7 +34,7 @@
             Text="{x:Static local:Literales.TituloBotonConectarFacebook}"
             BackgroundColor="{StaticResource ColorBotones}"
             ImageSource="facebook.png"
-            ContentLayout="Left, 5"
+            ContentLayout="Left, 3"
             />
         <Button 
             Grid.Row="3" 
@@ -43,7 +43,7 @@
             Text="{x:Static local:Literales.TituloBotonConectarGoogle}"
             BackgroundColor="{StaticResource ColorBotones}"
             ImageSource="google.png"
-            ContentLayout="Left, 5"
+            ContentLayout="Left, 3"
             />
         <Label Text="{x:Static local:Literales.LabelEmail}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="4" Grid.Column="0"/>
         <Entry Text="{Binding Email}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="escriba su email" Grid.Row="4" Grid.Column="1" />

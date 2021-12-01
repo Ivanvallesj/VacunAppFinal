@@ -14,6 +14,17 @@ namespace VacunAppFinal.ViewModels
         public Command CargarVacunacionPacienteCommand { get; }
         readonly DbAdminVacunas dbAdminVacunas = new DbAdminVacunas();
         readonly DbAdminHijos dbAdminHijos = new DbAdminHijos();
+        private string nombreTutor;
+        public string NombreTutor
+        {
+            get { return nombreTutor; }
+            set
+            {
+                nombreTutor = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         private ObservableCollection<Paciente> hijos;
         public ObservableCollection<Paciente> Hijos
@@ -48,8 +59,15 @@ namespace VacunAppFinal.ViewModels
         }
         public CargarVacunacionPacienteViewModel()
         {
-            ObtenerHijos(this, new EventArgs());
-            ObtenerVacunas(this, new EventArgs());
+            nombreTutor = Inicio.TutorLogueado.Apellido + " " + Inicio.TutorLogueado.Nombre;
+            int idCalendario = 0;
+            CargarVacunacionPacienteCommand = new Command(async =>
+            {
+               
+                ObtenerHijos(this, new EventArgs());
+                ObtenerVacunas(this, new EventArgs(), idCalendario);
+            });
+
         }
 
         public async void ObtenerHijos(object sender, EventArgs e)
@@ -62,10 +80,10 @@ namespace VacunAppFinal.ViewModels
                 hijos.Add(hijo);
             }
         }
-        public async void ObtenerVacunas(object sender, EventArgs e,int idCalendario)
+        public async void ObtenerVacunas(object sender, EventArgs e, int idCalendario)
         {
             vacunas.Clear();
-            var vacunasCollection = await dbAdminVacunas.ObtenerTodos(idCalendario);
+            var vacunasCollection = await dbAdminVacunas.ObtenerTodos(1);
 
             foreach (Vacuna vacuna in vacunasCollection)
             {

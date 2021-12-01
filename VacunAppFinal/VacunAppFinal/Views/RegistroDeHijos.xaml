@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:VacunAppFinal.Core" xmlns:ViewModels="clr-namespace:VacunAppFinal.ViewModels"
+             xmlns:local="clr-namespace:VacunAppFinal.Core" 
+             xmlns:ViewModels="clr-namespace:VacunAppFinal.ViewModels"
              x:Class="VacunAppFinal.Views.RegistroDeHijos">
     <ContentPage.BindingContext>
         <ViewModels:RegistroDeHijosViewModel/>

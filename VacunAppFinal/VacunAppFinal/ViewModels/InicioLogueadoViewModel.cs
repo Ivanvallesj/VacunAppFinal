@@ -25,10 +25,15 @@ namespace VacunAppFinal.ViewModels
         {
 
             nombreTutor = Inicio.TutorLogueado.Apellido + " " + Inicio.TutorLogueado.Nombre;
+            
+            
+            
             RegistroDeHijosCommand = new Command(async =>
               {
                   MessagingCenter.Send<object>(this, "RegistroDeHijos");
               });
+
+
             CargarVacunacionPacienteCommand = new Command(async =>
             {
                 MessagingCenter.Send<object>(this, "CargarVacunacionPaciente");
