@@ -15,6 +15,7 @@ namespace VacunAppFinal
     public partial class Inicio : ContentPage
     {
         public static Tutor TutorLogueado;
+        public static Paciente HijoSeleccionado;
         public Inicio()
         {
             InitializeComponent();
@@ -22,10 +23,6 @@ namespace VacunAppFinal
             MessagingCenter.Subscribe<object>(this, "RegistroDeHijos", (obj) =>
             {
                 _ = Navigation.PushAsync(new RegistroDeHijos());
-            });
-            MessagingCenter.Subscribe<object>(this, "NuevaVacuna", (obj) =>
-            {
-                _ = Navigation.PushAsync(new CargarVacunacionPaciente());
             });
             MessagingCenter.Subscribe<object>(this, "NuevoHijo", (obj) =>
             {
@@ -58,6 +55,10 @@ namespace VacunAppFinal
             MessagingCenter.Subscribe<object>(this, "CamposIncompletosCargaHijo", (obj) =>
             {
                 _ = DisplayAlert("Campos incompletos", "Debe ingresar obligatoriamente Nombre, Apellido, DNI, Fecha de nacimiento y Sexo del hijo que quiera registrar", "Ok");
+            });
+            MessagingCenter.Subscribe<object>(this, "CargarVacunacionPaciente", (obj) =>
+            {
+                _ = Navigation.PushAsync(new CargarVacunacionPaciente());
             });
 
         }

@@ -25,7 +25,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -74,14 +73,7 @@
             BackgroundColor="{StaticResource ColorBotones}"
             Command="{Binding EliminarHijoCommand}"
             />
-        <Button Style="{StaticResource Key=estiloEditar}"
-            Grid.Row="7" 
-            Grid.Column="0" 
-            Margin="10,5"
-            Text="{x:Static local:Literales.TituloBotonCargarVacunacion}"
-            BackgroundColor="{StaticResource ColorBotones}"
-            Command="{Binding CargarCalendarioCommand}"
-            />
+
 
     </Grid>
 </ContentPage>

@@ -11,31 +11,19 @@ namespace VacunAppFinal.AdminData
 {
     public class DbAdminVacunas
     {
-        const string Url = "https://sanjustosoft.ar/api/apiVacunas";
+        const string Url = "https://sanjustosoft.ar/api/apiDetalleCalendarios";
 
-        public async Task<IEnumerable<Vacuna>> ObtenerTodos()
+        public async Task<IEnumerable<Paciente>> ObtenerTodos()
         {
             HttpClient client = Helper.ObtenerClienteHttp();
             string result = await client.GetStringAsync(Url + "/tutor/" + Inicio.TutorLogueado.Id);
-            return JsonConvert.DeserializeObject<IEnumerable<Vacuna>>(result);
+            return JsonConvert.DeserializeObject<IEnumerable<Paciente>>(result);
         }
-        private int? obtenerIdCalendario(SexoEnum sexo, bool prema)
-        {
-            if (sexo == SexoEnum.Masculino)
-                if (prema)
-                    return 4;
-                else
-                    return 1;
-            else
-                if (prema)
-                return 3;
-            else
-                return 2;
-        }
-        public async Task Eliminar(int id)
+        public async Task<IEnumerable<Vacuna>> ObtenerTodos(int idCalendario)
         {
             HttpClient client = Helper.ObtenerClienteHttp();
-            await client.DeleteAsync(Url + "/" + id);
+            string result = await client.GetStringAsync(Url + "/calendario/" + idCalendario);
+            return JsonConvert.DeserializeObject<IEnumerable<Vacuna>>(result);
         }
     }
 }

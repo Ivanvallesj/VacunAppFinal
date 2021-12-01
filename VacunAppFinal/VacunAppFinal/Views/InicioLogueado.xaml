@@ -39,6 +39,7 @@
             Margin="10,5"
             Text="{x:Static local:Literales.TituloBotonRegistrarVacunación}"
             BackgroundColor="{StaticResource ColorBotones}"
+            Command="{Binding CargarVacunacionPacienteCommand}"
             
             />
 

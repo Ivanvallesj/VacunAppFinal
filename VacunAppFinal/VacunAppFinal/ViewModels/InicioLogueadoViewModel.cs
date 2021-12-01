@@ -10,6 +10,7 @@ namespace VacunAppFinal.ViewModels
     public class InicioLogueadoViewModel: ObjetoNotificacion
     {
         public Command RegistroDeHijosCommand { get; }
+        public Command CargarVacunacionPacienteCommand { get; }
         private string nombreTutor;
 
         public string NombreTutor
@@ -28,6 +29,10 @@ namespace VacunAppFinal.ViewModels
               {
                   MessagingCenter.Send<object>(this, "RegistroDeHijos");
               });
+            CargarVacunacionPacienteCommand = new Command(async =>
+            {
+                MessagingCenter.Send<object>(this, "CargarVacunacionPaciente");
+            });
         }
     }
 }

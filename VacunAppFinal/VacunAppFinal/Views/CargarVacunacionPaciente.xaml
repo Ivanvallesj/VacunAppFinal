@@ -8,14 +8,19 @@
         <ViewModels:CargarVacunacionPacienteViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Resources>
-        <Style x:Key="estiloEditar" TargetType="Button">
-            <Style.Triggers>
-                <DataTrigger TargetType="{x:Type Button}"
-                        Binding="{Binding SelectedItem, Source={x:Reference listahijos}}" Value="{x:Null}">
-                    <Setter Property="IsEnabled" Value="False" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
+        
     </ContentPage.Resources>
-
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+    </Grid>
 </ContentPage>
+    

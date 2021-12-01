@@ -38,7 +38,6 @@ namespace VacunAppFinal.Core
         public static string TituloBotonCargarHijo = "Cargar Hijo";
         public static string TituloBotonModificarHijo = "Modificar Hijo";
         public static string TituloBotonQuitarHijo = "Quitar Hijo";
-        public static string TituloBotonCargarVacunacion = "Cargar vacunacion";
 
         //**Pantalla Nuevo Hijo
         public static string TituloNuevoHijo = "Nuevo Hijo";

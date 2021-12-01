@@ -9,8 +9,13 @@ using Xamarin.Forms.Xaml;
 
 namespace VacunAppFinal.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CargarVacunacionPaciente : ContentPage
     {
-        
+        public CargarVacunacionPaciente()
+        {
+            InitializeComponent();
+        }
     }
+
 }
