@@ -7,16 +7,6 @@
     <ContentPage.BindingContext>
         <ViewModels:CargarVacunacionPacienteViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.Resources>
-        <Style x:Key="estiloEditar" TargetType="Button">
-            <Style.Triggers>
-                <DataTrigger TargetType="{x:Type Button}"
-        Binding="{Binding SelectedItem, Source={x:Reference listahijos}}" Value="{x:Null}">
-                    <Setter Property="IsEnabled" Value="False" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-    </ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -31,21 +21,45 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="36"  Grid.Row="0" Grid.Column="0"/>
-        <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0"  Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand">
-            <Label Text="{x:Static local:Literales.LabelBienvenido}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title" />
-            <Label Text="{Binding NombreTutor}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  />
+
+            <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0"  Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand">
+                <Label Text="{x:Static local:Literales.LabelBienvenido}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title" />
+                <Label Text="{Binding NombreTutor}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  />
+
         </StackLayout>
         <Picker Title="Selecciona tu hijo"
                 Grid.Column="0" 
-                Grid.Row="3" 
+                Grid.Row="2" 
+                HorizontalTextAlignment="Center"
                 x:Name="listahijos" 
-               
-                SelectedItem="{Binding HijoSeleccionado}">
-            <Picker.Items
-                 ItemsSource="{Binding Hijos, Mode=OneWay}">
-            </Picker.Items>
-
-            
+                ItemsSource="{Binding Hijos}"
+                ItemDisplayBinding="{Binding Nombre}"
+                SelectedItem="{Binding HijoSeleccionado}"
+                TextColor="Black"
+                FontAttributes="Italic"
+                FontSize="24"
+                TitleColor="Black"
+                Margin="0.5">
         </Picker>
+        <ListView ItemsSource="{Binding  Vacunas}"  Grid.Column="0" Grid.Row="3">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Label Text="{Binding Nombre}" FontSize="16"  />
+                                <Label Text="Aca va la descripcion" FontSize="12" />
+                            </StackLayout>
+                            <Switch IsToggled="{Binding Selected}" Grid.Column="1" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
+
 </ContentPage>

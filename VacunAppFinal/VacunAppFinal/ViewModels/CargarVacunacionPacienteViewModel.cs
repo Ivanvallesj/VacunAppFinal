@@ -11,12 +11,13 @@ namespace VacunAppFinal.ViewModels
 {
     public class CargarVacunacionPacienteViewModel : ObjetoNotificacion
     {
-        public Command CargarHijoCommand { get; }
-        public Command ModificarHijoCommand { get; }
-        public Command EliminarHijoCommand { get; }
+
         public Command ObtenerHijosCommand { get; }
+        public Command CargarVacunacionPacienteCommand { get; }
 
         readonly DbAdminHijos dbAdminHijos = new DbAdminHijos();
+        readonly DbAdminVacunas dbAdminVacunas = new DbAdminVacunas();
+
         private string nombreTutor;
 
         public string NombreTutor
@@ -49,42 +50,41 @@ namespace VacunAppFinal.ViewModels
                 OnPropertyChanged();
             }
         }
+        private ObservableCollection<Vacuna> vacunas;
+
+        public ObservableCollection<Vacuna> Vacunas
+        {
+            get { return vacunas; }
+            set { vacunas = value;
+                OnPropertyChanged();
+            }
+        }
+
         public CargarVacunacionPacienteViewModel()
         {
-            hijos = new ObservableCollection<Paciente>();   
+            int idCalendario = 0;
+            hijos = new ObservableCollection<Paciente>();
             ObtenerHijos(this, new EventArgs());
             nombreTutor = Inicio.TutorLogueado.Apellido + " " + Inicio.TutorLogueado.Nombre;
             ObtenerHijosCommand = new Command(async =>
             {
                 ObtenerHijos(this, new EventArgs());
             });
-            CargarHijoCommand = new Command(async =>
+            CargarVacunacionPacienteCommand = new Command (async =>
             {
-                MessagingCenter.Send<object>(this, "NuevoHijo");
+                ObtenerVacunas(this, new EventArgs(),idCalendario);
+                //ObtenerHijos(this, new EventArgs());
             });
-            ModificarHijoCommand = new Command(execute: () =>
+        }
+
+        public async void ObtenerVacunas(object sender, EventArgs e, int idCalendario)
+        {
+            vacunas.Clear();
+            var vacunasCollection = await dbAdminVacunas.ObtenerTodos(idCalendario);
+            foreach (Vacuna vacuna in vacunasCollection)
             {
-                MessagingCenter.Send<object, Paciente>(this, "ModificarHijo", hijoSeleccionado);
-            },
-            canExecute: () =>
-            {
-                return hijoSeleccionado != null;
+                vacunas.Add(vacuna);
             }
-            );
-            EliminarHijoCommand = new Command(execute: async () =>
-            {
-                bool result = await Application.Current.MainPage.DisplayAlert("Pregunta importante", "Está seguro/a que quiere borrar el hijo seleccionado", "Sí", "No");
-                if (result)
-                {
-                    _ = dbAdminHijos.Eliminar(hijoSeleccionado.Id);
-                    ObtenerHijos(this, new EventArgs());
-                }
-            },
-            canExecute: () =>
-            {
-                return hijoSeleccionado != null;
-            }
-            );
         }
 
         public async void ObtenerHijos(object sender, EventArgs e)
