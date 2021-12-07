@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:VacunAppFinal.Core" 
              xmlns:ViewModels="clr-namespace:VacunAppFinal.ViewModels"
-             x:Class="VacunAppFinal.Views.CargarVacunacionPaciente">
+             x:Class="VacunAppFinal.Views.CargarVacunacionPaciente"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors">
     <ContentPage.BindingContext>
         <ViewModels:CargarVacunacionPacienteViewModel/>
     </ContentPage.BindingContext>
@@ -40,8 +41,15 @@
                 FontSize="24"
                 TitleColor="Black"
                 Margin="0.5">
+            <!--<Picker.Behaviors>
+                    <behaviors:EventHandlerBehavior EventName="SelectedIndexChanged">
+                <behaviors:InvokeCommandAction Command="{Binding CargarVacunacionPacienteCommand}" />
+                    </behaviors:EventHandlerBehavior>
+                </Picker.Behaviors>-->
         </Picker>
-        <ListView ItemsSource="{Binding  Vacunas}"  Grid.Column="0" Grid.Row="3">
+        <ListView ItemsSource="{Binding Vacunas}"  
+                  Grid.Column="0" Grid.Row="3"
+                  >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -51,7 +59,7 @@
                             </Grid.ColumnDefinitions>
                             <StackLayout VerticalOptions="CenterAndExpand">
                                 <Label Text="{Binding Nombre}" FontSize="16"  />
-                                <Label Text="Aca va la descripcion" FontSize="12" />
+                                <Label Text="{Binding Beneficios}" FontSize="12" />
                             </StackLayout>
                             <Switch IsToggled="{Binding Selected}" Grid.Column="1" />
                         </Grid>

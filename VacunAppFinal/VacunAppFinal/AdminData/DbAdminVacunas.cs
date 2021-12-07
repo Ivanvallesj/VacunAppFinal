@@ -11,7 +11,7 @@ namespace VacunAppFinal.AdminData
 {
     public class DbAdminVacunas
     {
-        const string Url = "https://sanjustosoft.ar/api/apiVacuna";
+        const string Url = "https://sanjustosoft.ar/api/apiVacunas";
 
         public async Task<IEnumerable<Paciente>> ObtenerTodos()
         {

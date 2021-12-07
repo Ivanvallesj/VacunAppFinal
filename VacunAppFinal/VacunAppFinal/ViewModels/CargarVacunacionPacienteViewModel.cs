@@ -36,7 +36,8 @@ namespace VacunAppFinal.ViewModels
             get { return hijoSeleccionado; }
             set
             {
-                hijoSeleccionado = value;
+                hijoSeleccionado = value; 
+                ObtenerVacunas(this, new EventArgs(), (int)(hijoSeleccionado.CalendarioId == null ? 0 : hijoSeleccionado.CalendarioId));
                 OnPropertyChanged();
             }
         }
@@ -64,7 +65,9 @@ namespace VacunAppFinal.ViewModels
         {
             int idCalendario = 0;
             hijos = new ObservableCollection<Paciente>();
+            vacunas = new ObservableCollection<Vacuna>();
             ObtenerHijos(this, new EventArgs());
+            ObtenerVacunas(this, new EventArgs(), idCalendario);
             nombreTutor = Inicio.TutorLogueado.Apellido + " " + Inicio.TutorLogueado.Nombre;
             ObtenerHijosCommand = new Command(async =>
             {

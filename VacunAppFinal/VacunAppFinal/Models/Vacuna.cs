@@ -11,5 +11,9 @@ namespace VacunAppFinal.Models
         public string Nombre { get; set; }
         public int PeriodoAplicacion { get; set; }
         public string Beneficios { get; set; }
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }
