@@ -8,6 +8,16 @@
     <ContentPage.BindingContext>
         <ViewModels:CargarVacunacionPacienteViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style x:Key="aplicarVacuna" TargetType="Switch">
+            <Style.Triggers>
+                <DataTrigger TargetType="{x:Type Switch}"
+        Binding="{Binding Triggers, Source={x:Reference listavacunas}}" Value="{x:Null}">
+                    <Setter Property="IsToggled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -49,6 +59,8 @@
         </Picker>
         <ListView ItemsSource="{Binding Vacunas}"  
                   Grid.Column="0" Grid.Row="3"
+                  x:Name="listavacunas"
+                  
                   >
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -61,7 +73,11 @@
                                 <Label Text="{Binding Nombre}" FontSize="16"  />
                                 <Label Text="{Binding Beneficios}" FontSize="12" />
                             </StackLayout>
-                            <Switch IsToggled="{Binding Selected}" Grid.Column="1" />
+                            <Switch 
+                                IsToggled="{Binding Id}"
+                                Grid.Column="1" 
+                                
+                                />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

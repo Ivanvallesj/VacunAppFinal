@@ -70,6 +70,7 @@ namespace VacunAppFinal
         private void AbrirPantallaIniciarSesion(object sender, EventArgs e)
         {
             _ = Navigation.PushAsync(new IniciarSesion());
+
         }
     }
 }
