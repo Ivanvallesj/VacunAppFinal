@@ -11680,10 +11680,10 @@ namespace VacunAppFinal.Droid
 			public const int design_snackbar_background = 2131165291;
 			
 			// aapt resource value: 0x7F07006C
-			public const int facebook = 2131165292;
+			public const int Face = 2131165292;
 			
 			// aapt resource value: 0x7F07006D
-			public const int google = 2131165293;
+			public const int Gmail = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
 			public const int ic_mtrl_checked_circle = 2131165294;

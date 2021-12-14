@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using VacunAppFinal.AdminData;
 using VacunAppFinal.Core;
 using VacunAppFinal.Models;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Core;
 
@@ -18,9 +19,22 @@ namespace VacunAppFinal.ViewModels
         public Command CargarVacunacionPacienteCommand { get; }
         public Command AplicarVacunaCommand { get; }
 
+        public bool SwitchAplicarVacuna = false;
+
         readonly DbAdminHijos dbAdminHijos = new DbAdminHijos();
         readonly DbAdminVacunas dbAdminVacunas = new DbAdminVacunas();
         readonly DbAdminVacunasColocadas dbAdminVacunasColocadas = new DbAdminVacunasColocadas();
+
+        private Vacuna vacunaSeleccionada;
+
+        public Vacuna VacunaSeleccionada
+        {
+            get { return vacunaSeleccionada; }
+            set { 
+                vacunaSeleccionada = value;
+                OnPropertyChanged();
+            }
+        }
 
         private string nombreTutor;
 
@@ -64,39 +78,6 @@ namespace VacunAppFinal.ViewModels
                 OnPropertyChanged();
             }
         }
-        private DateTime fecha;
-
-        public DateTime Fecha
-        {
-            get { return fecha; }
-            set
-            {
-                fecha = value;
-                OnPropertyChanged();
-            }
-        }
-        private int vacId;
-
-        public int VacId
-        {
-            get { return vacId; }
-            set
-            {
-                vacId = value;
-                OnPropertyChanged();
-            }
-        }
-        private int pacId;
-
-        public int PacId
-        {
-            get { return pacId; }
-            set
-            {
-                pacId = value;
-                OnPropertyChanged();
-            }
-        }
         private ObservableCollection<VacunaColocada> vacunaColocada;
 
         public ObservableCollection<VacunaColocada> VacunaColocada
@@ -111,6 +92,7 @@ namespace VacunAppFinal.ViewModels
 
         public CargarVacunacionPacienteViewModel()
         {
+            
             int idCalendario = 0;
             hijos = new ObservableCollection<Paciente>();
             vacunas = new ObservableCollection<Vacuna>();
@@ -128,10 +110,10 @@ namespace VacunAppFinal.ViewModels
             //    ObtenerVacunas(this, new EventArgs(),idCalendario);
             //    //ObtenerHijos(this, new EventArgs());
             //});
-            AplicarVacunaCommand = new Command(async =>
-            {
-                AplicarVacuna(this, new EventArgs());
-            });
+            //AplicarVacunaCommand = new Command(async =>
+            //{
+            //    AplicarVacuna(this, new EventArgs());
+            //});
         }
 
         public async void ObtenerVacunas(object sender, EventArgs e, int idCalendario)
@@ -162,14 +144,9 @@ namespace VacunAppFinal.ViewModels
                 await Task.Run(() =>
                 {
                     var dbAdminVacunasColocadas = new DbAdminVacunasColocadas();
-                    _ = dbAdminVacunasColocadas.Agregar(vacId, pacId, fecha);
+                    _ = dbAdminVacunasColocadas.Agregar(vacunaSeleccionada.Id, hijoSeleccionado.Id, DateTime.Now);
                 });
             }
-                
- 
-
-
         }
-
     }
 }

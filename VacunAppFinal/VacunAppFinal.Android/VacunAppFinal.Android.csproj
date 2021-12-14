@@ -87,9 +87,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\google.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\VacunAppFinal\VacunAppFinal.csproj">
       <Project>{463DF229-772F-4A6C-8124-9F6CD6811D12}</Project>
       <Name>VacunAppFinal</Name>
@@ -99,7 +96,10 @@
     <AndroidResource Include="Resources\drawable\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\facebook.png" />
+    <AndroidResource Include="Resources\drawable\Gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Face.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

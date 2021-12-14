@@ -21,38 +21,39 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Label Text="{x:Static local:Literales.TituloIniciarSesion}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Large"  Grid.Row="1" Grid.Column="0"
+        <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <Label Text="{x:Static local:Literales.TituloIniciarSesion}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Large"  Grid.Row="1" Grid.Column="0" 
           BackgroundColor="{StaticResource ColorFondoSubtitulos}"     
-          Grid.ColumnSpan="2"/>
+          Grid.ColumnSpan="3"/>
 
         <Button 
             Grid.Row="2" 
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="3"
             Grid.Column="0" 
             Text="{x:Static local:Literales.TituloBotonConectarFacebook}"
             BackgroundColor="{StaticResource ColorBotones}"
-            ImageSource="facebook.png"
+            ImageSource="Face.png"
             ContentLayout="Left, 3"
             />
         <Button 
             Grid.Row="3" 
-            Grid.ColumnSpan="2"            
+            Grid.ColumnSpan="3"            
             Grid.Column="0" 
             Text="{x:Static local:Literales.TituloBotonConectarGoogle}"
             BackgroundColor="{StaticResource ColorBotones}"
-            ImageSource="google.png"
+            ImageSource="Gmail.png"
             ContentLayout="Left, 3"
             />
-        <Label Text="{x:Static local:Literales.LabelEmail}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="4" Grid.Column="0"/>
-        <Entry Text="{Binding Email}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="escriba su email" Grid.Row="4" Grid.Column="1" />
+        <Label Text="{x:Static local:Literales.LabelEmail}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Medium"  Grid.Row="4" Grid.Column="0"/>
+        <Entry Text="{Binding Email}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="escriba su email" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" />
         <Label Text="{x:Static local:Literales.LabelContraseña}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="5" Grid.Column="0"/>
-        <Entry Text="{Binding Password}" TextColor="Black" Placeholder="escriba su contraseña" Grid.Row="5" Grid.Column="1" IsPassword="True"/>
+        <Entry Text="{Binding Password}" TextColor="Black" Placeholder="escriba su contraseña" Grid.Row="5" Grid.Column="1" IsPassword="True" Grid.ColumnSpan="2"/>
         <Button 
             Grid.Row="6" 
             Grid.Column="0" 
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="3"
             Text="{x:Static local:Literales.TituloIniciarSesion}"
             BackgroundColor="{StaticResource ColorBotones}"
             Command="{Binding IniciarSesionCommand}"
@@ -60,7 +61,7 @@
         <Button 
             Grid.Row="7" 
             Grid.Column="0" 
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="3"
             Text="{x:Static local:Literales.TituloOlvidasteTuContraseña}"
             BackgroundColor="{StaticResource ColorBotones}"
             />

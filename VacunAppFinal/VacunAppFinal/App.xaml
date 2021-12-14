@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VacunAppFinal.App">
     <Application.Resources>
-        <Color x:Key="ColorBotones">DarkSeaGreen</Color>
+        <Color x:Key="ColorBotones">#90CAF9</Color>
         <Color x:Key="ColorTituloApp">Brown</Color>
         <Color x:Key="ColorFondoSubtitulos">LightGray</Color>
     </Application.Resources>

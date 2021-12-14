@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,10 @@ namespace VacunAppFinal.AdminData
                 PacienteId = pacId,
                 Fecha = fecha
             };
+
+            Debug.Print("--------------------------------VAC   ID----------------------------------------"+vacId.ToString());
+            Debug.Print("--------------------------------PAC   ID----------------------------------------" + pacId.ToString());
+            Debug.Print("--------------------------------FECHA   Date----------------------------------------" + fecha.ToString());
 
             HttpClient client = Helper.ObtenerClienteHttp();
             var response = await client.PostAsync(Url,
