@@ -4,7 +4,7 @@
              x:Class="VacunAppFinal.App">
     <Application.Resources>
         <Color x:Key="ColorBotones">#90CAF9</Color>
-        <Color x:Key="ColorTituloApp">Brown</Color>
-        <Color x:Key="ColorFondoSubtitulos">LightGray</Color>
+        <Color x:Key="ColorTituloApp">#4D59BB</Color>
+        <Color x:Key="ColorFondoSubtitulos">#C8DBF7</Color>
     </Application.Resources>
 </Application>

@@ -23,7 +23,8 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <!--<Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/> -->
+        <Image Source="VacunApp.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"/>
         <Label Text="{x:Static local:Literales.TituloIniciarSesion}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Large"  Grid.Row="1" Grid.Column="0" 
           BackgroundColor="{StaticResource ColorFondoSubtitulos}"     
           Grid.ColumnSpan="3"/>
@@ -47,9 +48,9 @@
             ContentLayout="Left, 3"
             />
         <Label Text="{x:Static local:Literales.LabelEmail}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Medium"  Grid.Row="4" Grid.Column="0"/>
-        <Entry Text="{Binding Email}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="escriba su email" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" />
+        <Entry Text="{Binding Email}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="Escriba su email" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" />
         <Label Text="{x:Static local:Literales.LabelContraseña}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="5" Grid.Column="0"/>
-        <Entry Text="{Binding Password}" TextColor="Black" Placeholder="escriba su contraseña" Grid.Row="5" Grid.Column="1" IsPassword="True" Grid.ColumnSpan="2"/>
+        <Entry Text="{Binding Password}" TextColor="Black" Placeholder="Escriba su contraseña" Grid.Row="5" Grid.Column="1" IsPassword="True" Grid.ColumnSpan="2"/>
         <Button 
             Grid.Row="6" 
             Grid.Column="0" 
@@ -57,6 +58,8 @@
             Text="{x:Static local:Literales.TituloIniciarSesion}"
             BackgroundColor="{StaticResource ColorBotones}"
             Command="{Binding IniciarSesionCommand}"
+            FontSize="Medium"
+            FontAttributes="Bold"
             />
         <Button 
             Grid.Row="7" 
@@ -64,6 +67,8 @@
             Grid.ColumnSpan="3"
             Text="{x:Static local:Literales.TituloOlvidasteTuContraseña}"
             BackgroundColor="{StaticResource ColorBotones}"
+            FontSize="Small"
+            FontAttributes="Italic"
             />
 
     </Grid>

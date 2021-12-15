@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:VacunAppFinal.Core" 
              x:Class="VacunAppFinal.Views.CrearCuenta">
 
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
@@ -15,29 +14,32 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  Grid.Row="0" Grid.Column="0"/>
+        <!-- <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  Grid.Row="0" Grid.Column="0"/> -->
+        <Image Source="VacunApp.png" Grid.Column="0" Grid.Row="0"/>
         <Button 
             Grid.Row="1" 
             Grid.Column="0" 
             Text="{x:Static local:Literales.TituloBotonCrearCuenta}"
             BackgroundColor="{StaticResource ColorBotones}"
-            Clicked="AbrirPantallaCrearCuenta"/>        
+            Clicked="AbrirPantallaCrearCuenta"
+            FontSize="Medium"
+            FontAttributes="Bold"/>        
 
         <Button 
             Grid.Row="2" 
             Grid.Column="0" 
             Text="{x:Static local:Literales.TituloBotonConectarFacebook}"
             BackgroundColor="{StaticResource ColorBotones}"
-            ImageSource="facebook.png"
-            ContentLayout="Left, 5"
+            ImageSource="Face.png"
+            ContentLayout="Left, 3"
             />
         <Button 
             Grid.Row="3" 
             Grid.Column="0" 
             Text="{x:Static local:Literales.TituloBotonConectarGoogle}"
             BackgroundColor="{StaticResource ColorBotones}"
-            ImageSource="google.png"
-            ContentLayout="Left, 5"
+            ImageSource="Gmail.png"
+            ContentLayout="Left, 3"
             />
 
     </Grid>
