@@ -30,17 +30,18 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="36"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Image Source="VacunApp.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
+       
         <Label Text="{x:Static local:Literales.TituloNuevoHijo}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Large"  Grid.Row="1" Grid.Column="0"
           BackgroundColor="{StaticResource ColorFondoSubtitulos}"     
           Grid.ColumnSpan="2"/>
         <Label Text="{x:Static local:Literales.LabelNombre}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="2" Grid.Column="0"/>
-        <Entry Text="{Binding Nombre}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="escriba aquí su nombre" Grid.Row="2" Grid.Column="1" />
+        <Entry Text="{Binding Nombre}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="Escriba aquí su nombre" Grid.Row="2" Grid.Column="1" />
         <Label Text="{x:Static local:Literales.LabelApellido}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="3" Grid.Column="0"/>
-        <Entry Text="{Binding Apellido}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="escriba aquí su apellido" Grid.Row="3" Grid.Column="1" />
+        <Entry Text="{Binding Apellido}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="Escriba aquí su apellido" Grid.Row="3" Grid.Column="1" />
         <Label Text="{x:Static local:Literales.LabelDni}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="4" Grid.Column="0"/>
-        <Entry Text="{Binding DNI}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="escriba su DNI" Grid.Row="4" Grid.Column="1" />
-        <Label Text="{x:Static local:Literales.LabelFechaNacimiento}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="5" Grid.Column="0"/>
+        <Entry Text="{Binding DNI}" TextColor="Black" IsTextPredictionEnabled="True" Placeholder="Escriba aqui su DNI" Grid.Row="4" Grid.Column="1" />
+        <Label Text="{x:Static local:Literales.LabelFechaNacimiento}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Small"  Grid.Row="5" Grid.Column="0"/>
         <DatePicker TextColor="CadetBlue" MinimumDate="03/01/1900" MaximumDate="03/31/2023" Grid.Row="5" Grid.Column="1" Format="dd/MM/yyyy" Date="{Binding FechaNacimiento}" />
         <Label Text="{x:Static local:Literales.LabelSexo}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="6" Grid.Column="0"/>
         <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0"  Grid.Row="6" Grid.Column="1" HorizontalOptions="CenterAndExpand" >
@@ -57,8 +58,8 @@
                   Grid.Column="1"
                   VerticalOptions="Center" />
         <Label Text="{x:Static local:Literales.LabelPesoAlNacer}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="Black" FontSize="Medium"  Grid.Row="8" Grid.Column="0"/>
-        <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0"  Grid.Row="8" Grid.Column="1" HorizontalOptions="CenterAndExpand" >
-            <Entry Text="{Binding Peso}" TextColor="Black" Keyboard="Numeric"  />
+        <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0"  Grid.Row="8" Grid.Column="1"  >
+            <Entry Text="{Binding Peso}" TextColor="Black" Keyboard="Numeric"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"    />
             <Label Text="Gramos" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
             
         </StackLayout>

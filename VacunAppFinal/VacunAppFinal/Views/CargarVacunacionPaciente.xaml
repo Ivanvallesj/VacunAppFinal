@@ -21,9 +21,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="36"  Grid.Row="0" Grid.Column="0"/>
-
-            <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0"  Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand">
+        <Image Source="VacunApp.png" Grid.Column="0" Grid.Row="0" />
+        <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0"  Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand">
                 <Label Text="{x:Static local:Literales.LabelBienvenido}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title" />
                 <Label Text="{Binding NombreTutor}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  />
 
@@ -41,11 +40,6 @@
                 FontSize="24"
                 TitleColor="Black"
                 Margin="0.5">
-            <!--<Picker.Behaviors>
-                    <behaviors:EventHandlerBehavior EventName="SelectedIndexChanged">
-                <behaviors:InvokeCommandAction Command="{Binding CargarVacunacionPacienteCommand}" />
-                    </behaviors:EventHandlerBehavior>
-                </Picker.Behaviors>-->
         </Picker>
         <ListView ItemsSource="{Binding Vacunas}"  
                   Grid.Column="0" Grid.Row="3"

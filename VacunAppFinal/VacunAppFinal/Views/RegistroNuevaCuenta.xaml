@@ -21,7 +21,6 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <!-- <Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="36"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/> -->
         <Image Source="VacunApp.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
         <Label Text="{x:Static local:Literales.TituloMiCuenta}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Large"  Grid.Row="1" Grid.Column="0"
           BackgroundColor="{StaticResource ColorFondoSubtitulos}"     

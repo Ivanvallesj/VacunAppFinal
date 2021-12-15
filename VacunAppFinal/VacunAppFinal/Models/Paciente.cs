@@ -18,7 +18,6 @@ namespace VacunAppFinal.Models
         public string Domicilio { get; set; }
         public int TutorId { get; set; }
         public Tutor Tutor { get; set; }
-        
         public int? CalendarioId { get; set; }
         public Calendario Calendario { get; set; }
 

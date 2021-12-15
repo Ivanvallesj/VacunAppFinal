@@ -99,21 +99,7 @@ namespace VacunAppFinal.ViewModels
             vacunaColocada = new ObservableCollection<VacunaColocada>();
             ObtenerHijos(this, new EventArgs());
             ObtenerVacunas(this, new EventArgs(), idCalendario);
-            //AplicarVacuna(this, new EventArgs());
             nombreTutor = Inicio.TutorLogueado.Apellido + " " + Inicio.TutorLogueado.Nombre;
-            //ObtenerHijosCommand = new Command(async =>
-            //{
-            //    ObtenerHijos(this, new EventArgs());
-            //});
-            //CargarVacunacionPacienteCommand = new Command (async =>
-            //{
-            //    ObtenerVacunas(this, new EventArgs(),idCalendario);
-            //    //ObtenerHijos(this, new EventArgs());
-            //});
-            //AplicarVacunaCommand = new Command(async =>
-            //{
-            //    AplicarVacuna(this, new EventArgs());
-            //});
         }
 
         public async void ObtenerVacunas(object sender, EventArgs e, int idCalendario)

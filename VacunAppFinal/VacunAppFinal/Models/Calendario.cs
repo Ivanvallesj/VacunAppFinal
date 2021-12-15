@@ -12,8 +12,6 @@ namespace VacunAppFinal.Models
         public string Nombre { get; set; }
         public SexoEnum SexoPaciente { get; set; }
         public bool PrematuroPaciente { get; set; }
-
-
         public virtual ObservableCollection<DetalleCalendario> DetalleCalendarios { get; set; }
 
     }

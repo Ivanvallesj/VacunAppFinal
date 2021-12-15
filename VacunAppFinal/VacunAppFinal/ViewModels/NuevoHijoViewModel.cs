@@ -98,10 +98,6 @@ namespace VacunAppFinal.ViewModels
                 OnPropertyChanged();
             }
         }
-
-
-
-
         public void ActualizarPantalla()
         {
             Nombre = HijoModificado.Nombre;
@@ -113,7 +109,6 @@ namespace VacunAppFinal.ViewModels
             Peso = (float)HijoModificado.Peso;
             Domicilio = HijoModificado.Domicilio;
         }
-
         public NuevoHijoViewModel()
         {
             GuardarNuevoHijoCommand = new Command(async () =>

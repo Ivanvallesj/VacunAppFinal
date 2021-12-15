@@ -15,7 +15,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <!--<Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  Grid.Row="0" Grid.Column="0" FontAttributes="Bold"/> -->
         <Image Source="VacunApp.png" Grid.Column="0" Grid.Row="0"/>
         <Image Source="logo.png" BackgroundColor="PowderBlue" Grid.Column="0" Grid.Row="1"  />
 

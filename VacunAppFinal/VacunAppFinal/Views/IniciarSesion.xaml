@@ -23,10 +23,10 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <!--<Label Text="{x:Static local:Literales.TituloApp}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource ColorTituloApp}" FontSize="Title"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/> -->
+
         <Image Source="VacunApp.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"/>
-        <Label Text="{x:Static local:Literales.TituloIniciarSesion}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Large"  Grid.Row="1" Grid.Column="0" 
-          BackgroundColor="{StaticResource ColorFondoSubtitulos}"     
+        <Label Text="{x:Static local:Literales.TituloInicioSesion}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Title"  Grid.Row="1" Grid.Column="0" FontAttributes="Italic" 
+              
           Grid.ColumnSpan="3"/>
 
         <Button 
@@ -37,6 +37,7 @@
             BackgroundColor="{StaticResource ColorBotones}"
             ImageSource="Face.png"
             ContentLayout="Left, 3"
+            
             />
         <Button 
             Grid.Row="3" 
@@ -60,6 +61,7 @@
             Command="{Binding IniciarSesionCommand}"
             FontSize="Medium"
             FontAttributes="Bold"
+            
             />
         <Button 
             Grid.Row="7" 

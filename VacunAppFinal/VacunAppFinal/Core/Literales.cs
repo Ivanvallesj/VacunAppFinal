@@ -16,6 +16,7 @@ namespace VacunAppFinal.Core
         public static string LabelContraseña = "Contraseña:";
         //*****Pantalla Iniciar sesión
         public static string TituloIniciarSesion = "Iniciar Sesión";
+        public static string TituloInicioSesion = "Inicio de Sesión";
         public static string TituloOlvidasteTuContraseña = "¿Olvidaste tu contraseña?";
 
         public static string TituloBotonNuevo = "Nuevo";
